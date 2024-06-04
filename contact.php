@@ -1,22 +1,9 @@
 <?php 
-require_once __DIR__."/vendor/autoload.php";
 
-use PHPMailer\PHPMailer\PHPMailer;
+$isSend = mail("g.muntoni.cs@gmail.com", $_POST['subject'], $_POST['message'], array('From' => $_POST['email']));
 
-
-$mail = new PHPMailer(true);
-$mail->From = $_POST['email'];
-$mail->FromName = $_POST['name'];
-$mail->addAddress("g.muntoni.cs@gmail.com");
-$mail->isHTML(false);
-$mail->Subject = $_POST['subject'];
-$mail->Body = $_POST['message'];
-
-try {
-    if (!$mail->send())
-        echo "Invio fallito " . $mail->ErrorInfo;
-    else
-        echo "Messaggio inviato con successo";
-} catch (\PHPMailer\PHPMailer\Exception $e) {
-    echo $e->getMessage();
+if ($isSend) {
+    echo "OK";
+} else {
+    var_dump(error_get_last()['message']);
 }

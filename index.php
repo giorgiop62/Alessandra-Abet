@@ -40,8 +40,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="index.html"><img src="assets/img/gallery/bg-remove.png" alt="" class="img-fluid logo"></a>
-        <!--<h1><a href="index.html"><span>Alessandra Abet</span></a></h1>-->
+        <a href="index.php"><img src="assets/img/gallery/bg-remove.png" alt="" class="img-fluid logo"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -279,7 +278,6 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <img class="logoFooter" src="./assets/img/gallery/logo.png" alt="">
-
           </div>
 
           <div class="col-lg-4 col-md-6">
