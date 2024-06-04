@@ -219,7 +219,7 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Luogo:</h4>
-                <p>Napooli , 80142</p>
+                <p>Napoli , 80142</p>
               </div>
 
               <div class="email">
@@ -240,7 +240,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
-            <form action="/contact.php" method="post" role="form" class="php-email-form">
+            <form action="./contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -258,7 +258,7 @@
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Il tuo messaggio è stato inviato </div>
+                <div class="sent-message">Il tuo messaggio è stato inviato</div>
               </div>
               <div class="text-center"><button type="submit">Invia messaggio</button></div>
             </form>

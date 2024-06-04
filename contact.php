@@ -1,23 +1,22 @@
 <?php 
-require_once __DIR__."/vendor/autoload.php"; //PHPMailer Object 
+require_once __DIR__."/vendor/autoload.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
 
 
+$mail = new PHPMailer(true);
+$mail->From = $_POST['email'];
+$mail->FromName = $_POST['name'];
+$mail->addAddress("g.muntoni.cs@gmail.com");
+$mail->isHTML(false);
+$mail->Subject = $_POST['subject'];
+$mail->Body = $_POST['message'];
 
-
-$mail = new PHPMailer; //From email address and name 
-$mail->From = filter_input(INPUT_POST, $_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS);; 
-$mail->FromName = filter_input(INPUT_POST, $_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
-$mail->addAddress("giorgiop62@gmail.com");
-$mail->isHTML(false); 
-$mail->Subject = filter_input(INPUT_POST, $_POST['subject'], FILTER_SANITIZE_SPECIAL_CHARS); 
-//$mail->Body = "<i>Mail body in HTML</i>";
-$mail->AltBody = filter_input(INPUT_POST, $_POST['message'], FILTER_SANITIZE_SPECIAL_CHARS);
-
-if (!$mail->send()) {
-  echo "Mailer Error: " . $mail->ErrorInfo; 
-} else { 
-  echo "Messaggio inviato con successo"; 
+try {
+    if (!$mail->send())
+        echo "Invio fallito " . $mail->ErrorInfo;
+    else
+        echo "Messaggio inviato con successo";
+} catch (\PHPMailer\PHPMailer\Exception $e) {
+    echo $e->getMessage();
 }
-
-
-
