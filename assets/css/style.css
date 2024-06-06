@@ -14,10 +14,8 @@ a:hover {
 }
 
 .logoFooter {
-  width: 300px;
+  width: 200px;
 }
-
-
 
 h1,
 h2,
@@ -1225,4 +1223,17 @@ section {
   #footer .footer-top .footer-info {
     margin: -20px 0 30px 0;
   }
+
+  #footer {
+    text-align: center;
+  }
+
+  .footer-links li a {
+    margin: 0 auto;
+  }
+
+
+
+
+
 }
